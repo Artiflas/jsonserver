@@ -10,7 +10,7 @@ const createPost = async (e) => {
     likes: 0,
   }
 
-  await fetch('https://my-json-server.typicode.com/Artiflas/jsonserver/posts', {
+  await fetch('https://my-json-server.typicode.com/Artiflas/jsonserver/posts/', {
     method: 'POST',
     body: JSON.stringify(doc),
     headers: { 'Content-Type': 'application/json' }

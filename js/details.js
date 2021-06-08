@@ -22,7 +22,7 @@ deleteBtn.addEventListener('click', async () => {
   const res = await fetch('http://localhost:3000/posts/' + id, {
     method: 'DELETE'
   });
-  window.location.replace("/");
+  window.location.replace("/index.html");
 })
 
 window.addEventListener('DOMContentLoaded', renderDetails);

@@ -11,7 +11,8 @@ const createPost = async (e) => {
 
   await fetch('https://my-json-server.typicode.com/Artiflas/jsonserver/posts', {
     method: 'POST',
-    body: JSON.stringify(doc)
+    body: JSON.stringify(doc),
+    headers: { 'Content-Type': 'application/json' }
   })
 
   window.location.replace('/index.html');

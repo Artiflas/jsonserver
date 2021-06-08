@@ -3,7 +3,7 @@
 const container = document.querySelector('.blogs');
 
 const renderPosts = async () => {
-  let uri = 'https://my-json-server.typicode.com/Artiflas/jsonserver/posts'
+  let uri = 'https://my-json-server.typicode.com/Artiflas/jsonserver/posts?_sort=likes'
 
   const res = await fetch(uri);
   const posts = await res.json();

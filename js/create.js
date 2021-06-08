@@ -3,10 +3,11 @@ const form = document.querySelector('form');
 
 const createPost = async (e) => {
   e.preventDefault();
+
   const doc = {
     title: form.title.value,
     body: form.body.value,
-    likes: 0
+    likes: 0,
   }
 
   await fetch('https://my-json-server.typicode.com/Artiflas/jsonserver/posts', {
@@ -15,7 +16,7 @@ const createPost = async (e) => {
     headers: { 'Content-Type': 'application/json' }
   })
 
-  window.location.replace('/index.html');
+  window.location.replace('/')
 }
 
 form.addEventListener('submit', createPost);

@@ -1,15 +1,19 @@
 // javascript for index.html
 
 const container = document.querySelector('.blogs');
+const searchForm = document.querySelector('.search')
 
-const renderPosts = async () => {
+const renderPosts = async (term) => {
   let uri = 'https://my-json-server.typicode.com/Artiflas/jsonserver/posts?_sort=likes&_order=desc';
+  if (term) {
+    uri += `&q=${term}`
+  }
 
   const res = await fetch(uri);
   const posts = await res.json();
 
   let template = '';
-  posts.forEach((post) => {
+  posts.forEach(post => {
     template += `
     <div class="post">
       <h2>${post.title}</h2>
@@ -22,5 +26,9 @@ const renderPosts = async () => {
 
   container.innerHTML = template;
 }
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  renderPosts(searchForm.term.value.trim());
+})
 
 window.addEventListener('DOMContentLoaded', () => renderPosts());

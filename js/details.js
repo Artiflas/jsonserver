@@ -1,7 +1,7 @@
 // javascript for details.html
 
 const id = new URLSearchParams(window.location.search).get('id');
-const container = document.querySelector('details');
+const container = document.querySelector('.details');
 
 const renderDetails = async () => {
   const res = await fetch('https://my-json-server.typicode.com/Artiflas/jsonserver/posts/' + id);
